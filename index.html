@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Git Tutorial</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+
+  <main>
+    <h1>Most Common Git Commands</h1>
+    <p>The first thing we need to do, is to check if Git is properly installed:</p>
+
+    <pre>
+      <code>git --version</code>
+    </pre>
+    
+    <h2>Configure Git</h2>
+    <p>
+      Note: Use global to set the username and e-mail for every repository on your computer.
+      If you want to set the username/e-mail for just the current repo, you can remove global</p>
+    <pre>
+      <code>git config --global user.email "you@example.com"</code>
+      <code>git config --global user.name "Your Name"</code>
+    </pre>
+
+    <p></p>
+    <pre>
+      <code>git config --list</code>
+    </pre>
+
+    <h2>Initialize Git</h2>
+    <p>Initialize Git on that folder:</p>
+    <pre>
+      <code>git --init</code>
+    </pre>
+
+    <h2>Git Adding New Files</h2>
+    <p>README.md file that describes the repository (recommended for all repositories):</p>
+
+    <p>List the files in our current working directory:</p>
+    <pre>
+      <code>ls</code>
+    </pre>
+
+    <p>Then we check the Git status and see if it is a part of our repo:</p>
+    <pre>
+      <code>git status</code>
+      <code>git status --short</code>
+    </pre>
+    <p>
+      <strong>Note:</strong> Short status flags are:
+    </p>
+    <ul>
+      <li>?? - Untracked files</li>
+      <li>A - Files added to stage</li>
+      <li>M - Modified files</li>
+      <li>D - Deleted files</li>
+    </ul>
+
+    <h2>Git Add</h2>
+    <pre>
+      <code>git add &lt;file_name&gt;</code>
+      <code>git add .</code>
+      <code>git add --all (or) git add -A</code>
+      <code>git add *&lt;files_type&gt;</code>
+    </pre>
+
+    <h2>Git Reset</h2>
+    <p>Undo a git add</p>
+    <pre>
+      <code>git reset &lt;file_name&gt;</code>
+    </pre>
+
+    <h2>Git Commit</h2>
+    <p>
+      Since we have finished our work, we are ready move from <b>stage</b> to <b>commit</b> for our repo.<br>
+      When we <b>commit</b>, we should always include a message.
+    </p>
+    <pre>
+      <code>git commit -m "<i>message</i>"</code>
+    </pre>
+
+    <h2>Git Commit Log</h2>
+    <p>To view the history of commits for a repository, you can use the log command:</p>
+    <pre>
+      <code>git log</code>
+    </pre>
+
+    <h2>Git Help</h2>
+    <p>There are a couple of different ways you can use the help command in command line:</p>
+    <ul>
+      <li>git <u><i>command</i></u> -help -  See all the available options for the specific command</li>
+      <li>git help --all -  See all possible commands</li>
+    </ul>
+    <pre>
+      <code>git command -help</code>
+      <code>git help --all</code>
+    </pre>
+
+    <h2>Git Branch</h2>
+    <p>In Git, a branch is a new/separate version of the main repository.</p>
+    <p>Create a new branch:</p>
+    <pre>
+      <code>git branch &lt;branch_name&gt;</code>
+    </pre>
+
+    <p>List the existing branches:</p>
+    <pre>
+      <code>git branch</code>
+    </pre>
+
+    <p>Delete the branch, as it is no longer needed:</p>
+    <pre>
+      <code>git branch -d &lt;branch_name&gt;</code>
+    </pre>
+
+    <p>Moving us from the current branch, to the one specified at the end of the command:</p>
+    <pre>
+      <code>git checkout &lt;branch_name&gt;</code>
+    </pre>
+
+    <h3>Emergency Branch</h3>
+    <p>Create a new branch to deal with the emergency:</p>
+    <p>Create, and move to a new branch with the branch_name:</p>
+    <pre>
+      <code>git checkout -b emergency-fix</code>
+    </pre>
+
+    <h2>Git Branch Merge</h2>
+    <p>Merge from the branch_name with the current branch:</p>
+    <pre>
+      <code>git merge &lt;branch_name&gt;</code>
+    </pre>
+
+    <p>Remove the branch_name from the local repository:</p>
+    <pre>
+      <code>git branch -d &lt;branch_name&gt;</code>
+    </pre>
+
+    <h2>Git Remote</h2>
+    <p>Add a remote repository as an origin:</p>
+    <pre>
+      <code>git add origin https://github.com/username/repository-name.git</code>
+    </pre>
+
+    <h2>Git Pull from Remote</h2>
+    <p>pull is a combination of: fetch and then merge</p>
+
+    <p>Get all the change history of the origin for this branch:</p>
+    <pre>
+      <code>git fetch origin</code>
+    </pre>
+
+    <p>Merge the current branch with the branch master, on origin:</p>
+    <pre>
+      <code>git merge origin/master</code>
+    </pre>
+
+    <p>Update the current branch from its origin using a single command:</p>
+    <pre>
+      <code>git pull origin</code>
+    </pre>
+
+    <h2>Git Push to Romote</h2>
+    <p>push the current branch to its default remote origin:</p>
+    <pre>
+      <code>git push origin</code>
+    </pre>
+
+    <h2>Git Pull Branch from Romote</h2>
+    <p>List all local and remote branches of the current Git.</p>
+    <pre>
+      <code>git branch -a</code>
+    </pre>
+
+    <p>List only remote branches of the current Git.</p>
+    <pre>
+      <code>git branch -r</code>
+    </pre>
+
+    <h2>Git Clone</h2>
+    <p>Clone the repository to your local Git:</p>
+    <pre>
+      <code>git clone https://github.com/username/repository-name.git</code>
+    </pre>
+
+    <p>Clone the repository github to a folder named "new-folder":</p>
+    <pre>
+      <code>git clone https://github.com/username/repository-name.git "new-folder"</code>
+    </pre>
+
+    <p>Rename the origin remote to upstream:</p>
+    <pre>
+      <code>git remote rename origin upstream</code>
+    </pre>
+
+    <h2>Git Revert</h2>
+    <p>Show the log of the repository, showing just 1 line per commit:</p>
+    <pre>
+      <code>git log --oneline</code>
+    </pre>
+
+    <p>revert the latest commit:</p>
+    <pre>
+      <code>git revert HEAD</code>
+    </pre>
+
+    <p>revert the latest commit, skipping the commit message editor:</p>
+    <pre>
+      <code>git revert HEAD --no-edit</code>
+    </pre>
+
+    <p>revert the two last commits:</p>
+    <pre>
+      <code>git revert HEAD~1</code>
+    </pre>
+
+    <h2>Git Reset</h2>
+    <p>reset to the commit with the hash:</p>
+    <pre>
+      <code>git reset e214sd</code>
+    </pre>
+
+    <p>Amend the previous commit to with the message "Updated new message":</p>
+    <pre>
+      <code>git commit --amend "Updated new message"</code>
+    </pre>
+
+  </main>
+
+</body>
+</html>
